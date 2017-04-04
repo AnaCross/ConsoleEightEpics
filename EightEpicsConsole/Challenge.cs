@@ -8,7 +8,9 @@ namespace EightEpicsConsole
 {
     class Challenge
     {
-        EnumThreatChallenge enumThretChallange;
+        public EnumThreatChallenge enumThretChallange;
+        int quantityDice;
+        int value;
 
         public Challenge(EnumThreatChallenge etc)
         {

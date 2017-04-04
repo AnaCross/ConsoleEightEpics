@@ -15,6 +15,7 @@ namespace EightEpicsConsole
         List<Hero> randomHeroList = new List<Hero>();
         List<Threats> threatList = new List<Threats>();
         List<Threats> randomThreatList = new List<Threats>();
+        List<Challenge> challengeList = new List<Challenge>();
 
         private NewGame() { }
         public static NewGame CreateNewGame()
@@ -84,9 +85,37 @@ namespace EightEpicsConsole
             heroList.Add(Sylliph);
         }
 
+        void createChallenge()
+        {
+            Challenge less = new Challenge(EnumThreatChallenge.LESS);
+            Challenge more = new Challenge(EnumThreatChallenge.MORE);
+            Challenge sameNumber = new Challenge(EnumThreatChallenge.SAME_NUMBER);
+            Challenge other = new Challenge(EnumThreatChallenge.OTHER);
+            challengeList.Add(less);
+            challengeList.Add(other);
+            challengeList.Add(more);
+            challengeList.Add(sameNumber);
+        }
+
+
         void createThreat()
         {
-            Threats Broxix = new Threats();
+            Threats Broxix = new Threats("Broxix", 8, EnumThreatName.BROXIX);
+            Threats Durge = new Threats("Durge", 8, EnumThreatName.DURGE);
+            Threats Hronthar = new Threats("Hronthar", 3, EnumThreatName.HRONTHAR);
+            Threats Makano = new Threats("Makano", 4, EnumThreatName.MAKANO);
+            Threats Narssis = new Threats("Narssis", 4, EnumThreatName.NARSSIS);
+            Threats Pirn = new Threats("Pirn", 3, EnumThreatName.PIRN);
+            Threats Serrin = new Threats("Serrin", 2, EnumThreatName.SERRIN);
+            Threats Uluwash = new Threats("Uluwash", 3, EnumThreatName.ULUWASH);
+            Broxix.setChallengeList(challengeList.Find(h => h.enumThretChallange == EnumThreatChallenge.MORE));
+            Durge.setChallengeList(challengeList.Find(h => h.enumThretChallange == EnumThreatChallenge.LESS));
+            Hronthar.setChallengeList(challengeList.Find(h => h.enumThretChallange == EnumThreatChallenge.MORE));
+            Makano.setChallengeList(challengeList);
+            Narssis.setChallengeList(challengeList.Find(h => h.enumThretChallange == EnumThreatChallenge.OTHER));
+            Pirn.setChallengeList(challengeList.Find(h => h.enumThretChallange == EnumThreatChallenge.SAME_NUMBER));
+            Serrin.setChallengeList(challengeList.Find(h => h.enumThretChallange == EnumThreatChallenge.OTHER));
+            Uluwash.setChallengeList(challengeList.Find(h => h.enumThretChallange == EnumThreatChallenge.LESS));
         }
     }
 }

@@ -21,14 +21,17 @@ namespace EightEpicsConsole
             challengeList = new List<Challenge>();
         }
 
-        public void setChallengeList(int quantity, EnumThreatChallenge etn)
+        public void setChallengeList(Challenge challenge)
         {
-
+            for(int i=0; i<numberChallange; ++i)
+            {
+                challengeList.Add(challenge);
+            }
         }
 
-        public void setChallengeList(List<EnumThreatName> etnList)
+        public void setChallengeList(List<Challenge> etnList)
         {
-            challengeList = 
+            challengeList = etnList;
         }
 
     }
