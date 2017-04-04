@@ -13,6 +13,8 @@ namespace EightEpicsConsole
         int numberThreats;
         List<Hero> heroList = new List<Hero>();
         List<Hero> randomHeroList = new List<Hero>();
+        List<Threats> threatList = new List<Threats>();
+        List<Threats> randomThreatList = new List<Threats>();
 
         private NewGame() { }
         public static NewGame CreateNewGame()
@@ -80,6 +82,11 @@ namespace EightEpicsConsole
             heroList.Add(Leafwind);
             heroList.Add(Ophinia);
             heroList.Add(Sylliph);
+        }
+
+        void createThreat()
+        {
+            Threats Broxix = new Threats();
         }
     }
 }
