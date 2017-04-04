@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Adapter.cs" />
     <Compile Include="EnumGameLevel.cs" />
     <Compile Include="EnumHeroName.cs" />
     <Compile Include="Hero.cs" />

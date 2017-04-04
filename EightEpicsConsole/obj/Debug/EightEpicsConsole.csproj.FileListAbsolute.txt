@@ -4,3 +4,9 @@ C:\Users\Zla Kobieta\Documents\Visual Studio 2012\Projects\EightEpicsConsole\Eig
 C:\Users\Zla Kobieta\Documents\Visual Studio 2012\Projects\EightEpicsConsole\EightEpicsConsole\bin\Debug\EightEpicsConsole.pdb
 C:\Users\Zla Kobieta\Documents\Visual Studio 2012\Projects\EightEpicsConsole\EightEpicsConsole\obj\Debug\EightEpicsConsole.exe
 C:\Users\Zla Kobieta\Documents\Visual Studio 2012\Projects\EightEpicsConsole\EightEpicsConsole\obj\Debug\EightEpicsConsole.pdb
+C:\Users\wgrel\Documents\Visual Studio 2015\Projects\ConsoleEightEpics\EightEpicsConsole\bin\Debug\EightEpicsConsole.exe.config
+C:\Users\wgrel\Documents\Visual Studio 2015\Projects\ConsoleEightEpics\EightEpicsConsole\obj\Debug\EightEpicsConsole.exe
+C:\Users\wgrel\Documents\Visual Studio 2015\Projects\ConsoleEightEpics\EightEpicsConsole\obj\Debug\EightEpicsConsole.pdb
+C:\Users\wgrel\Documents\Visual Studio 2015\Projects\ConsoleEightEpics\EightEpicsConsole\bin\Debug\EightEpicsConsole.exe
+C:\Users\wgrel\Documents\Visual Studio 2015\Projects\ConsoleEightEpics\EightEpicsConsole\bin\Debug\EightEpicsConsole.pdb
+C:\Users\wgrel\Documents\Visual Studio 2015\Projects\ConsoleEightEpics\EightEpicsConsole\obj\Debug\EightEpicsConsole.csprojResolveAssemblyReference.cache

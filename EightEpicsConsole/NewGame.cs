@@ -37,6 +37,7 @@ namespace EightEpicsConsole
                     numberThreats = 8;
                     break;
             }
+            createHeroList();
         }
 
         void createHeroList()
