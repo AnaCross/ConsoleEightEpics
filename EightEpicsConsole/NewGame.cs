@@ -11,9 +11,9 @@ namespace EightEpicsConsole
         static NewGame newGame = new NewGame();
         bool isHeroRandom;
         int numberThreats;
-        List<Hero> heroList = new List<Hero>();
+        public List<Hero> heroList = new List<Hero>();
         List<Hero> randomHeroList = new List<Hero>();
-        List<Threats> threatList = new List<Threats>();
+        public List<Threats> threatList = new List<Threats>();
         List<Threats> randomThreatList = new List<Threats>();
         List<Challenge> challengeList = new List<Challenge>();
 
@@ -56,7 +56,7 @@ namespace EightEpicsConsole
                 if (randomThreatList.Exists(h => h.ident == hero).Equals(false))
                 {
                     randomThreatList.Add(threatList[hero]);
-                    Console.WriteLine(threatList[hero].name);
+                    //Console.WriteLine(threatList[hero].name);
                 }
             }
         }
@@ -73,14 +73,14 @@ namespace EightEpicsConsole
                 createHero();
                 Random rnd = new Random();
                 int hero;
-                Console.WriteLine("Hero List");
+                //Console.WriteLine("Hero List");
                 while (randomHeroList.Count != 8)
                 {
                     hero = rnd.Next(8);
                     if (randomHeroList.Exists(h => h.ident == hero).Equals(false))
                     {
                         randomHeroList.Add(heroList[hero]);
-                        Console.WriteLine(heroList[hero].name);
+                        //Console.WriteLine(heroList[hero].name);
                     }
                 }
             }
@@ -129,37 +129,37 @@ namespace EightEpicsConsole
             Threats Pirn = new Threats("Pirn", 3, EnumThreatName.PIRN,5);
             Threats Serrin = new Threats("Serrin", 2, EnumThreatName.SERRIN,6);
             Threats Uluwash = new Threats("Uluwash", 3, EnumThreatName.ULUWASH,7);
-            Console.WriteLine("Broxix");
+            //Console.WriteLine("Broxix");
             Broxix.setChallengeList(challengeList.Find(h => h.enumThretChallange == EnumThreatChallenge.MORE));
             Broxix.completeChallenge(15, 3);
-            Console.WriteLine("Durge");
+            //Console.WriteLine("Durge");
             Durge.setChallengeList(challengeList.Find(h => h.enumThretChallange == EnumThreatChallenge.LESS));
             Durge.completeChallenge(1, 5, 1);
             Durge.completeChallenge(2, 2, 2);
             Durge.completeChallenge(3, 1, 3);
-            Console.WriteLine("Hronthar");
+            //Console.WriteLine("Hronthar");
             Hronthar.setChallengeList(challengeList.Find(h => h.enumThretChallange == EnumThreatChallenge.MORE));
             Hronthar.completeChallenge(32, 1, 6);
             Hronthar.completeChallenge(40, 1, 7);
             Hronthar.completeChallenge(48, 1, 8);
-            Console.WriteLine("Makano");
+            //Console.WriteLine("Makano");
             Makano.setChallengeList(challengeList);
             Makano.completeChallenge(10, 1, 8);
             Makano.completeChallenge(0, 1, 8);
             Makano.completeChallenge(45, 1, 8);
             Makano.completeChallenge(0, 1, 8);
-            Console.WriteLine("Narssis");
+            //Console.WriteLine("Narssis");
             Narssis.setChallengeList(challengeList.Find(h => h.enumThretChallange == EnumThreatChallenge.OTHER));
             Narssis.completeChallenge(0, 6);
-            Console.WriteLine("Pirn");
+            //Console.WriteLine("Pirn");
             Pirn.setChallengeList(challengeList.Find(h => h.enumThretChallange == EnumThreatChallenge.SAME_NUMBER));
             Pirn.completeChallenge(0, 1, 6);
             Pirn.completeChallenge(0, 1, 7);
             Pirn.completeChallenge(0, 1, 8);
-            Console.WriteLine("Serrin");
+            //Console.WriteLine("Serrin");
             Serrin.setChallengeList(challengeList.Find(h => h.enumThretChallange == EnumThreatChallenge.OTHER));
             Serrin.completeChallenge(0, 8);
-            Console.WriteLine("Uluwash");
+            //Console.WriteLine("Uluwash");
             Uluwash.setChallengeList(challengeList.Find(h => h.enumThretChallange == EnumThreatChallenge.LESS));
             Uluwash.completeChallenge(10, 1, 6);
             Uluwash.completeChallenge(9, 1, 7);

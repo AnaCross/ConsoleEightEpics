@@ -39,8 +39,6 @@ namespace EightEpicsConsole
             }
         }
 
-        
-
         public EnumGameLevel changeLevel()
         {
             Console.WriteLine("You start adventure with Eight Epics! Change game level: \n(E)asy: 5 Threats and not random Hero\n(M)edium: 5 Threats and random Hero\n(H)ard: 8 Threats and random Hero\nWrite [E/M/H]: ");
@@ -55,6 +53,23 @@ namespace EightEpicsConsole
                 default:
                     return EnumGameLevel.EASY;
             }
+        }
+
+        public void startRound(Round round)
+        {
+            Console.WriteLine("Dice pool: ");
+            foreach(Dice d in round.dicePool.dicePool){
+                Console.Write(d.value + " ");
+            }
+            Console.WriteLine();
+            Console.WriteLine("Threat: " + round.threat.name);
+            for(int i=0; i< round.threat.challengeList.Count; ++i)
+            {
+                adapter.writeChallenge(round.threat, round.threat.challengeList[i], i);
+            }
+            Console.WriteLine();
+            Console.WriteLine("Hero:");
+            Console.ReadKey();
         }
     }
 }

@@ -13,7 +13,7 @@ namespace EightEpicsConsole
         int iter;
         public int ident;
         public EnumThreatName iD;
-        List<Challenge> challengeList;
+        public List<Challenge> challengeList;
 
         public Threats(String n, int nc, EnumThreatName etn, int i)
         {
@@ -38,13 +38,18 @@ namespace EightEpicsConsole
             challengeList = etnList;
         }
 
+        public List<Challenge> getChallengeList()
+        {
+            return challengeList;
+        }
+
         public void completeChallenge(int var, int quantityChallenge, int quantityDice)
         {
             int buf = iter;
             for(int i=iter; i<(quantityChallenge+buf); ++i)
             {
                 //Console.WriteLine(i);
-                challengeList[i].setValue(var);
+                challengeList[i].setValue(quantityChallenge);
                 challengeList[i].setQuantityDice(quantityDice);
                 iter++;
             }

@@ -21,9 +21,11 @@ namespace EightEpicsConsole
             UI ui = UI.createUI();
             ui.hello();
             newGame.setLevel(ui.changeLevel());
+            Round round = new Round(newGame.threatList[0], newGame.heroList);
+            ui.startRound(round);
             while (isFinish == false)
             {
-
+                
             }
         }
     }

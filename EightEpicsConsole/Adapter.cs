@@ -55,5 +55,46 @@ namespace EightEpicsConsole
                 }
             }
         }
+
+        public void writeChallenge(Threats threat, Challenge ch, int i)
+        {
+            switch (ch.enumThretChallange)
+            {
+                case EnumThreatChallenge.LESS:
+                    Console.WriteLine("{0} D: {1}-", ch.getQuantityDice(), ch.getValue());
+                    break;
+                case EnumThreatChallenge.MORE:
+                    Console.WriteLine("{0} D: {1}+", ch.getQuantityDice(), ch.getValue());
+                    break;
+                case EnumThreatChallenge.OTHER:
+                    writeOtherChallange(threat, ch, i);
+                    break;
+                case EnumThreatChallenge.SAME_NUMBER:
+                    Console.WriteLine("{0} D: Same number", ch.getQuantityDice());
+                    break;
+            }
+        }
+
+        private void writeOtherChallange(Threats threat, Challenge ch, int i)
+        {
+            switch (threat.iD)
+            {
+                case EnumThreatName.MAKANO:
+                    Console.WriteLine("{0}D: 1 1 2 3 4 5 6 6", ch.getQuantityDice());
+                    break;
+                case EnumThreatName.NARSSIS:
+                    Console.WriteLine("{0}D: 1 2 3 4 5 6", ch.getQuantityDice());
+                    break;
+                case EnumThreatName.SERRIN:
+                    if (i == 0)
+                    {
+                        Console.WriteLine("{0}D: 6 6 6 6 6 6 6 6 : 1 1 1 1 1 1 1 1", ch.getQuantityDice());
+                    }else
+                    {
+                        Console.WriteLine("{0}D: 1 1 1 1 1 1 1 1 : 6 6 6 6 6 6 6 6", ch.getQuantityDice());
+                    }
+                    break;
+            }
+        }
     }
 }
