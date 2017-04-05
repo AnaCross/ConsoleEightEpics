@@ -31,10 +31,8 @@ namespace EightEpicsConsole
             {
                 case "Y":
                     Process.Start("https://www.alderac.com/images/2016/09/EE-rulebook-v1-6.pdf");
-                    changeLevel();
                     break;
                 case "N":
-                    changeLevel();
                     break;
                 default:
                     break;
@@ -54,8 +52,9 @@ namespace EightEpicsConsole
                     return EnumGameLevel.MEDIUM;
                 case "H":
                     return EnumGameLevel.HARD;
+                default:
+                    return EnumGameLevel.EASY;
             }
-            return 0;
         }
     }
 }

@@ -8,17 +8,21 @@ namespace EightEpicsConsole
 {
     class Threats
     {
-        String name;
+        public String name;
         int numberChallange;
-        EnumThreatName enumThreatName;
+        int iter;
+        public int ident;
+        public EnumThreatName iD;
         List<Challenge> challengeList;
 
-        public Threats(String n, int nc, EnumThreatName etn)
+        public Threats(String n, int nc, EnumThreatName etn, int i)
         {
             name = n;
             numberChallange = nc;
-            enumThreatName = etn;
+            iD = etn;
             challengeList = new List<Challenge>();
+            iter = 0;
+            ident = i;
         }
 
         public void setChallengeList(Challenge challenge)
@@ -32,6 +36,27 @@ namespace EightEpicsConsole
         public void setChallengeList(List<Challenge> etnList)
         {
             challengeList = etnList;
+        }
+
+        public void completeChallenge(int var, int quantityChallenge, int quantityDice)
+        {
+            int buf = iter;
+            for(int i=iter; i<(quantityChallenge+buf); ++i)
+            {
+                //Console.WriteLine(i);
+                challengeList[i].setValue(var);
+                challengeList[i].setQuantityDice(quantityDice);
+                iter++;
+            }
+        }
+
+        public void completeChallenge(int var, int quantityDice)
+        {
+            foreach(Challenge ch in challengeList)
+            {
+                ch.setValue(var);
+                ch.setQuantityDice(quantityDice);
+            }
         }
 
     }

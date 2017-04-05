@@ -9,18 +9,18 @@ namespace EightEpicsConsole
     class Hero
     {   
         int livePoint;
-        String name;
+        public String name;
         public EnumHeroName iD;
         bool isExhausted;
-        public int ident = 0;
+        public int ident;
 
-        public Hero(int lp, String n, EnumHeroName hn, int id)
+        public Hero(int lp, String n, EnumHeroName hn, int i)
         {
             livePoint = lp;
             name = n;
             isExhausted = false;
             iD = hn;
-            ident = id;
+            ident = i;
         }
 
         public void breakLivePoint(String tn)

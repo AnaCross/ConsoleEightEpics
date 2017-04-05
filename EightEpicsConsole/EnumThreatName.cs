@@ -5,7 +5,7 @@ using System.Text;
 
 namespace EightEpicsConsole
 {
-    public enum EnumThreatName
+    public enum EnumThreatName : int
     {
         BROXIX, DURGE, HRONTHAR, MAKANO, NARSSIS, PIRN, SERRIN, ULUWASH
     }

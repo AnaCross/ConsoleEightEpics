@@ -42,12 +42,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Adapter.cs" />
+    <Compile Include="Challenge.cs" />
     <Compile Include="EnumGameLevel.cs" />
     <Compile Include="EnumHeroName.cs" />
+    <Compile Include="EnumThreatChallange.cs" />
+    <Compile Include="EnumThreatName.cs" />
     <Compile Include="Hero.cs" />
     <Compile Include="NewGame.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Threats.cs" />
     <Compile Include="UI.cs" />
   </ItemGroup>
   <ItemGroup>

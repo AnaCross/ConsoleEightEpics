@@ -5,7 +5,7 @@ using System.Text;
 
 namespace EightEpicsConsole
 {
-    public enum EnumHeroName
+    public enum EnumHeroName : int
     {
         AURIEL, CAROOSH, GRON, JAROTH, KHANTOS, LEAFWIND, OPHINIA, SYLLIPH 
     }

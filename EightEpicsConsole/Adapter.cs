@@ -44,11 +44,11 @@ namespace EightEpicsConsole
                     case "M":
                         return "M";
                     case "m":
-                        return "m";
+                        return "M";
                     case "H":
                         return "H";
                     case "h":
-                        return "h";
+                        return "H";
                     default:
                         Console.WriteLine("Breaking date. Write return [E/M/H]:");
                         break;
