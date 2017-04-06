@@ -61,16 +61,16 @@ namespace EightEpicsConsole
             switch (ch.enumThretChallange)
             {
                 case EnumThreatChallenge.LESS:
-                    Console.WriteLine("{0} D: {1}-", ch.getQuantityDice(), ch.getValue());
+                    Console.WriteLine("{0}D: {1} -", ch.getQuantityDice(), ch.getValue());
                     break;
                 case EnumThreatChallenge.MORE:
-                    Console.WriteLine("{0} D: {1}+", ch.getQuantityDice(), ch.getValue());
+                    Console.WriteLine("{0}D: {1} +", ch.getQuantityDice(), ch.getValue());
                     break;
                 case EnumThreatChallenge.OTHER:
                     writeOtherChallange(threat, ch, i);
                     break;
                 case EnumThreatChallenge.SAME_NUMBER:
-                    Console.WriteLine("{0} D: Same number", ch.getQuantityDice());
+                    Console.WriteLine("{0}D: Same number", ch.getQuantityDice());
                     break;
             }
         }

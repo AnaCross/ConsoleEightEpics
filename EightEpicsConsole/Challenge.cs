@@ -9,7 +9,7 @@ namespace EightEpicsConsole
     class Challenge
     {
         public EnumThreatChallenge enumThretChallange;
-        public int quantityDice;
+        int quantityDice;
         int value;
 
         public Challenge(EnumThreatChallenge etc)

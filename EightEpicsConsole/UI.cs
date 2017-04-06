@@ -57,9 +57,10 @@ namespace EightEpicsConsole
 
         public void startRound(Round round)
         {
+            Console.Clear();
             Console.WriteLine("Dice pool: ");
-            foreach(Dice d in round.dicePool.dicePool){
-                Console.Write(d.value + " ");
+            for(int i=0; i<round.dicePool.dicePool.Count; ++i){
+                Console.Write(round.dicePool.dicePool[i].value + " ");
             }
             Console.WriteLine();
             Console.WriteLine("Threat: " + round.threat.name);

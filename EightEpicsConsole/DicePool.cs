@@ -9,13 +9,12 @@ namespace EightEpicsConsole
     class DicePool
     {
         public List<Dice> dicePool;
-        Dice dice;
         public DicePool(int qua)
         {
+            dicePool = new List<Dice>();
             for(int i=0; i<qua; ++i)
             {
-                dice = new Dice();
-                dicePool.Add(dice);
+                dicePool.Add(new Dice());
             }
         }
     }

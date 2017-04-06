@@ -33,7 +33,7 @@ namespace EightEpicsConsole
 
         void createDicePool()
         {
-            dicePool = new DicePool(threat.challengeList[numberChallange].getValue());
+            dicePool = new DicePool(threat.challengeList[numberChallange].getQuantityDice());
             foreach(Dice i in dicePool.dicePool)
             {
                 i.roll();

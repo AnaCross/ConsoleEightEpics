@@ -10,11 +10,11 @@ namespace EightEpicsConsole
     {
         int[] wall = {1, 2, 3, 4, 5, 6};
         public int value;
+        static Random rnd = new Random();
 
         public int roll()
         {
-            Random rnd = new Random();
-            value = rnd.Next(6) + 1;
+            value = wall[rnd.Next(0,6)];
             return value;
         }
     }
