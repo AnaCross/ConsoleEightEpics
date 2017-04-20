@@ -61,10 +61,10 @@ namespace EightEpicsConsole
             switch (ch.enumThretChallange)
             {
                 case EnumThreatChallenge.LESS:
-                    Console.WriteLine("{0}D: {1} -", ch.getQuantityDice(), ch.getValue());
+                    Console.WriteLine("{0}D: {1}-", ch.getQuantityDice(), ch.getValue());
                     break;
                 case EnumThreatChallenge.MORE:
-                    Console.WriteLine("{0}D: {1} +", ch.getQuantityDice(), ch.getValue());
+                    Console.WriteLine("{0}D: {1}+", ch.getQuantityDice(), ch.getValue());
                     break;
                 case EnumThreatChallenge.OTHER:
                     writeOtherChallange(threat, ch, i);
@@ -92,6 +92,25 @@ namespace EightEpicsConsole
                     }else
                     {
                         Console.WriteLine("{0}D: 1 1 1 1 1 1 1 1 : 6 6 6 6 6 6 6 6", ch.getQuantityDice());
+                    }
+                    break;
+            }
+        }
+
+        public void writeHero(EnumGameLevel egl, List<Hero> hL)
+        {
+            switch (egl)
+            {
+                case EnumGameLevel.EASY:
+                    for (int i = 0; i < 8; ++i)
+                    {
+                        Console.WriteLine(hL[i].click + hL[i].name);
+                    }
+                    break;
+                default:
+                    for (int i = 0; i < 8; ++i)
+                    {
+                        Console.WriteLine(hL[i].name);
                     }
                     break;
             }

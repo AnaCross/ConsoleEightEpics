@@ -11,6 +11,7 @@ namespace EightEpicsConsole
         static void Main(string[] args)
         {
             bool isFinish = false;
+            
             /*
              * 1. Roll dice pull
              * 2. Change hero
@@ -21,8 +22,8 @@ namespace EightEpicsConsole
             UI ui = UI.createUI();
             ui.hello();
             newGame.setLevel(ui.changeLevel());
-            Round round = new Round(newGame.threatList[0], newGame.heroList);
-            ui.startRound(round);
+            Round round = new Round(newGame.randomThreatList[0], newGame.heroList);
+            ui.startRound(round, newGame.egl);
             while (isFinish == false)
             {
                 

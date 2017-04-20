@@ -10,12 +10,14 @@ namespace EightEpicsConsole
     {
         static NewGame newGame = new NewGame();
         bool isHeroRandom;
-        int numberThreats;
+        int numberThreats = 0;
         public List<Hero> heroList = new List<Hero>();
         List<Hero> randomHeroList = new List<Hero>();
         public List<Threats> threatList = new List<Threats>();
-        List<Threats> randomThreatList = new List<Threats>();
+        public List<Threats> randomThreatList = new List<Threats>();
         List<Challenge> challengeList = new List<Challenge>();
+        static Random rnd = new Random();
+        public EnumGameLevel egl;
 
         private NewGame() { }
         public static NewGame CreateNewGame()
@@ -30,14 +32,17 @@ namespace EightEpicsConsole
                 case EnumGameLevel.EASY:
                     isHeroRandom = false;
                     numberThreats = 5;
+                    egl = gl;
                     break;
                 case EnumGameLevel.MEDIUM:
                     isHeroRandom = true;
                     numberThreats = 5;
+                    egl = gl;
                     break;
                 case EnumGameLevel.HARD:
                     isHeroRandom = true;
                     numberThreats = 8;
+                    egl = gl;
                     break;
             }
             createHeroList();
@@ -48,7 +53,6 @@ namespace EightEpicsConsole
         {
             createChallenge();
             createThreat();
-            Random rnd = new Random();
             int hero;
             while (randomThreatList.Count != numberThreats)
             {
@@ -56,7 +60,7 @@ namespace EightEpicsConsole
                 if (randomThreatList.Exists(h => h.ident == hero).Equals(false))
                 {
                     randomThreatList.Add(threatList[hero]);
-                    //Console.WriteLine(threatList[hero].name);
+                    Console.WriteLine(threatList[hero].name);
                 }
             }
         }
@@ -71,7 +75,6 @@ namespace EightEpicsConsole
             else
             {
                 createHero();
-                Random rnd = new Random();
                 int hero;
                 //Console.WriteLine("Hero List");
                 while (randomHeroList.Count != 8)
@@ -133,37 +136,38 @@ namespace EightEpicsConsole
             Broxix.setChallengeList(new Challenge(EnumThreatChallenge.MORE));
             Broxix.completeChallenge(15, 3);
             //Console.WriteLine("Durge");
-            Durge.setChallengeList(new Challenge(EnumThreatChallenge.LESS));
-            Durge.completeChallenge(1, 5, 1);
-            Durge.completeChallenge(2, 2, 2);
-            Durge.completeChallenge(3, 1, 3);
+            //Durge.setChallengeList(new Challenge(EnumThreatChallenge.LESS));
+            Durge.completeChallenge(1, 5, 1, new Challenge(EnumThreatChallenge.LESS));
+            Durge.completeChallenge(2, 2, 2, new Challenge(EnumThreatChallenge.LESS));
+            Durge.completeChallenge(3, 1, 3, new Challenge(EnumThreatChallenge.LESS));
             //Console.WriteLine("Hronthar");
-            Hronthar.setChallengeList(new Challenge(EnumThreatChallenge.MORE));
-            Hronthar.completeChallenge(32, 1, 6);
-            Hronthar.completeChallenge(40, 1, 7);
-            Hronthar.completeChallenge(48, 1, 8);
+            //Hronthar.setChallengeList(new Challenge(EnumThreatChallenge.MORE));
+            Hronthar.completeChallenge(32, 1, 6, new Challenge(EnumThreatChallenge.MORE));
+            Hronthar.completeChallenge(40, 1, 7, new Challenge(EnumThreatChallenge.MORE));
+            Hronthar.completeChallenge(48, 1, 8, new Challenge(EnumThreatChallenge.MORE));
             //Console.WriteLine("Makano");
-            Makano.setChallengeList(challengeList);
-            Makano.completeChallenge(10, 1, 8);
-            Makano.completeChallenge(0, 1, 8);
-            Makano.completeChallenge(45, 1, 8);
-            Makano.completeChallenge(0, 1, 8);
+            //Makano.setChallengeList(challengeList);
+            Makano.completeChallenge(10, 1, 8, new Challenge(EnumThreatChallenge.LESS));
+            Makano.completeChallenge(0, 1, 8, new Challenge(EnumThreatChallenge.OTHER));
+            Makano.completeChallenge(45, 1, 8, new Challenge(EnumThreatChallenge.MORE));
+            Makano.completeChallenge(0, 1, 8, new Challenge(EnumThreatChallenge.SAME_NUMBER));
             //Console.WriteLine("Narssis");
             Narssis.setChallengeList(new Challenge(EnumThreatChallenge.OTHER));
             Narssis.completeChallenge(0, 6);
             //Console.WriteLine("Pirn");
-            Pirn.setChallengeList(new Challenge(EnumThreatChallenge.SAME_NUMBER));
-            Pirn.completeChallenge(0, 1, 6);
-            Pirn.completeChallenge(0, 1, 7);
-            Pirn.completeChallenge(0, 1, 8);
+            //Pirn.setChallengeList(new Challenge(EnumThreatChallenge.SAME_NUMBER));
+            Pirn.completeChallenge(0, 1, 6, new Challenge(EnumThreatChallenge.SAME_NUMBER));
+            Pirn.completeChallenge(0, 1, 7, new Challenge(EnumThreatChallenge.SAME_NUMBER));
+            Pirn.completeChallenge(0, 1, 8, new Challenge(EnumThreatChallenge.SAME_NUMBER));
             //Console.WriteLine("Serrin");
             Serrin.setChallengeList(new Challenge(EnumThreatChallenge.OTHER));
             Serrin.completeChallenge(0, 8);
             //Console.WriteLine("Uluwash");
-            Uluwash.setChallengeList(new Challenge(EnumThreatChallenge.LESS));
-            Uluwash.completeChallenge(10, 1, 6);
-            Uluwash.completeChallenge(9, 1, 7);
-            Uluwash.completeChallenge(8, 1, 8);
+            //Uluwash.setChallengeList(new Challenge(EnumThreatChallenge.LESS));
+            //warość, liczba_challenge, liczba kości
+            Uluwash.completeChallenge(10, 1, 6, new Challenge(EnumThreatChallenge.LESS));
+            Uluwash.completeChallenge(9, 1, 7, new Challenge(EnumThreatChallenge.LESS));
+            Uluwash.completeChallenge(8, 1, 8, new Challenge(EnumThreatChallenge.LESS));
 
             threatList.Add(Broxix);
             threatList.Add(Durge);

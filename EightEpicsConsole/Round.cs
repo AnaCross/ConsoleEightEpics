@@ -10,8 +10,8 @@ namespace EightEpicsConsole
     {
         public Threats threat;
         public DicePool dicePool;
-        List<Hero> heroList;
-        int numberChallange;
+        public List<Hero> heroList;
+        public int numberChallange;
 
         public Round(Threats th, List<Hero> hL)
         {

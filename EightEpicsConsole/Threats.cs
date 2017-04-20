@@ -43,15 +43,14 @@ namespace EightEpicsConsole
             return challengeList;
         }
 
-        public void completeChallenge(int var, int quantityChallenge, int quantityDice)
+        public void completeChallenge(int var, int quantityChallenge, int quantityDice, Challenge challenge)
         {
-            int buf = iter;
-            for(int i=iter; i<(quantityChallenge+buf); ++i)
+            for(int i=0; i<quantityChallenge; ++i)
             {
-                //Console.WriteLine(i);
-                challengeList[i].setValue(quantityChallenge);
-                challengeList[i].setQuantityDice(quantityDice);
-                iter++;
+                challengeList.Add(challenge);
+                challengeList.Last().setValue(var);
+                //challengeList[i].setValue(var);
+                challengeList.Last().setQuantityDice(quantityDice);
             }
         }
 

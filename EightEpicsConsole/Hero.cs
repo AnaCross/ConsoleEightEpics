@@ -10,6 +10,7 @@ namespace EightEpicsConsole
     {   
         int livePoint;
         public String name;
+        public String click;
         public EnumHeroName iD;
         bool isExhausted;
         public int ident;
@@ -18,6 +19,7 @@ namespace EightEpicsConsole
         {
             livePoint = lp;
             name = n;
+            click = "[" + name[0] + "]";
             isExhausted = false;
             iD = hn;
             ident = i;
