@@ -64,7 +64,7 @@ namespace EightEpicsConsole
             }
             Console.WriteLine();
             Console.WriteLine("Threat: " + round.threat.name);
-            for(int i=0; i< round.countDicePool; ++i)
+            for(int i=0; i< round.threat.getChallengeList().Count; ++i)
             {
                 if(i == round.numberChallange)
                 {

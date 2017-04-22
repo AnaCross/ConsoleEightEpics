@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using EightEpicsConsole.Challenges
+using EightEpicsConsole.Challenges;
+using EightEpicsConsole.Heroes;
 
 namespace EightEpicsConsole
 {
@@ -59,7 +60,7 @@ namespace EightEpicsConsole
 
         public void writeChallenge(Threats threat, Challenge ch, int i)
         {
-            switch (ch.enumThretChallange)
+            switch (ch.getChallenge())
             {
                 case EnumThreatChallenge.LESS:
                     Console.WriteLine("{0}D: {1}-", ch.getQuantityDice(), ch.getValue());

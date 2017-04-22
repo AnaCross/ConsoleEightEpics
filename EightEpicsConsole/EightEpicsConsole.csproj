@@ -42,14 +42,26 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Adapter.cs" />
-    <Compile Include="Challenge\Challenge.cs" />
+    <Compile Include="Challenges\ChallengeOther.cs" />
+    <Compile Include="Challenges\Challenge.cs" />
+    <Compile Include="Challenges\ChallengeLess.cs" />
+    <Compile Include="Challenges\ChallengeMore.cs" />
+    <Compile Include="Challenges\ChallengeSameNumber.cs" />
     <Compile Include="Dice.cs" />
     <Compile Include="DicePool.cs" />
     <Compile Include="EnumGameLevel.cs" />
-    <Compile Include="Hero\EnumHeroName.cs" />
-    <Compile Include="Challenge\EnumThreatChallange.cs" />
+    <Compile Include="Heroes\EnumHeroName.cs" />
+    <Compile Include="Challenges\EnumThreatChallange.cs" />
+    <Compile Include="Heroes\HeroAuriel.cs" />
+    <Compile Include="Heroes\HeroCaroosh.cs" />
+    <Compile Include="Heroes\HeroGron.cs" />
+    <Compile Include="Heroes\HeroJarroth.cs" />
+    <Compile Include="Heroes\HeroKhantos.cs" />
+    <Compile Include="Heroes\HeroLeafwind.cs" />
+    <Compile Include="Heroes\HeroSylliph.cs" />
+    <Compile Include="Heroes\HeroOphinia.cs" />
     <Compile Include="Threat\EnumThreatName.cs" />
-    <Compile Include="Hero\Hero.cs" />
+    <Compile Include="Heroes\Hero.cs" />
     <Compile Include="NewGame.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

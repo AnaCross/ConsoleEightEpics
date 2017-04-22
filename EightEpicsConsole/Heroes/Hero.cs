@@ -4,25 +4,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EightEpicsConsole
+namespace EightEpicsConsole.Heroes
 {
-    class Hero
+    abstract class Hero
     {   
-        int livePoint;
-        public String name { get; }
-        public String click { get; }
-        public EnumHeroName iD { get; }
+        public int livePoint { get; set; } //aut
+        public String name { get; set; } //aut
+        public String click { get; set; } //aut
+        public EnumHeroName iD { get; set; } //aut
         bool isExhausted;
-        public int ident { get; }
+        public static int ident = 0;
 
-        public Hero(int lp, String n, EnumHeroName hn, int i)
+        public Hero()
         {
-            livePoint = lp;
-            name = n;
-            click = "[" + name[0] + "]";
+        /*
+            livePoint = lp; //aut
+            name = n; //aut
+            click = "[" + name[0] + "]"; //aut
             isExhausted = false;
-            iD = hn;
-            ident = i;
+            iD = hn; //aut
+            */
+            ident++; 
         }
 
         public void breakLivePoint(String tn)
@@ -31,7 +33,7 @@ namespace EightEpicsConsole
             {
                 case "S": //superpower
                     decreaseLivePoint();
-                    
+                    heroSkill();
                     break;
                 case "R": //reroll 3 dice
                     decreaseLivePoint();
@@ -55,6 +57,7 @@ namespace EightEpicsConsole
         {
             livePoint--;
         }
-    
+        abstract public void heroSkill();
+        //TODO All hero skills
     }
 }
