@@ -13,7 +13,7 @@ namespace EightEpicsConsole
         int iter;
         public int ident;
         public EnumThreatName iD;
-        public List<Challenge> challengeList;
+        List<Challenge> challengeList;
 
         public Threats(String n, int nc, EnumThreatName etn, int i)
         {
@@ -61,6 +61,11 @@ namespace EightEpicsConsole
                 ch.setValue(var);
                 ch.setQuantityDice(quantityDice);
             }
+        }
+
+        public Challenge getChallenge(int i)
+        {
+            return challengeList[i];
         }
 
     }

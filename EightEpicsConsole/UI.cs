@@ -55,16 +55,16 @@ namespace EightEpicsConsole
             }
         }
 
-        public void startRound(Round round, EnumGameLevel egl)
+        public void startRound(Round round, EnumGameLevel gameLevel)
         {
             Console.Clear();
             Console.WriteLine("Dice pool: ");
-            for(int i=0; i<round.dicePool.dicePool.Count; ++i){
-                Console.Write(round.dicePool.dicePool[i].value + " ");
+            for(int i=0; i<round.dicePool.Count; ++i){
+                Console.Write(round.dicePool[i].value + " ");
             }
             Console.WriteLine();
             Console.WriteLine("Threat: " + round.threat.name);
-            for(int i=0; i< round.threat.challengeList.Count; ++i)
+            for(int i=0; i< round.countDicePool; ++i)
             {
                 if(i == round.numberChallange)
                 {
@@ -73,11 +73,11 @@ namespace EightEpicsConsole
                 {
                     Console.Write("  ");
                 }
-                adapter.writeChallenge(round.threat, round.threat.challengeList[i], i);
+                adapter.writeChallenge(round.threat, round.threat.getChallenge(i), i);
             }
             Console.WriteLine();
             Console.WriteLine("Hero:");
-            adapter.writeHero(egl, round.heroList);
+            adapter.writeHero(gameLevel, round.heroList);
             Console.ReadKey();
         }
     }

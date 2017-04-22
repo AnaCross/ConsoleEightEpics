@@ -42,24 +42,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Adapter.cs" />
-    <Compile Include="Challenge.cs" />
+    <Compile Include="Challenge\Challenge.cs" />
     <Compile Include="Dice.cs" />
     <Compile Include="DicePool.cs" />
     <Compile Include="EnumGameLevel.cs" />
-    <Compile Include="EnumHeroName.cs" />
-    <Compile Include="EnumThreatChallange.cs" />
-    <Compile Include="EnumThreatName.cs" />
-    <Compile Include="Hero.cs" />
+    <Compile Include="Hero\EnumHeroName.cs" />
+    <Compile Include="Challenge\EnumThreatChallange.cs" />
+    <Compile Include="Threat\EnumThreatName.cs" />
+    <Compile Include="Hero\Hero.cs" />
     <Compile Include="NewGame.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Round.cs" />
-    <Compile Include="Threats.cs" />
+    <Compile Include="Threat\Threats.cs" />
     <Compile Include="UI.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

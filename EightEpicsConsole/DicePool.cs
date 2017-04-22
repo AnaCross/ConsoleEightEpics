@@ -6,16 +6,31 @@ using System.Threading.Tasks;
 
 namespace EightEpicsConsole
 {
-    class DicePool
+    class DicePool : List<Dice>
     {
-        public List<Dice> dicePool;
+        //public List<Dice> dicePool;
         public DicePool(int qua)
         {
-            dicePool = new List<Dice>();
+            //dicePool = new List<Dice>();
             for(int i=0; i<qua; ++i)
             {
-                dicePool.Add(new Dice());
+                Add(new Dice());
             }
         }
+
+        public void SerrinDicePool()
+        {
+            for (int i=0; i<this.Count; ++i)
+            {
+                this[i].setValue(6);
+            }
+        }
+
+        /*
+        public Dice getDice(int i)
+        {
+            return this[i];
+        }
+        */
     }
 }

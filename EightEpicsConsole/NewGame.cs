@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EightEpicsConsole.Challenges;
 
 namespace EightEpicsConsole
 {
@@ -12,12 +13,12 @@ namespace EightEpicsConsole
         bool isHeroRandom;
         int numberThreats = 0;
         public List<Hero> heroList = new List<Hero>();
-        List<Hero> randomHeroList = new List<Hero>();
-        public List<Threats> threatList = new List<Threats>();
+        public List<Hero> randomHeroList = new List<Hero>();
+        List<Threats> threatList = new List<Threats>();
         public List<Threats> randomThreatList = new List<Threats>();
         List<Challenge> challengeList = new List<Challenge>();
         static Random rnd = new Random();
-        public EnumGameLevel egl;
+        public EnumGameLevel gameLevel;
 
         private NewGame() { }
         public static NewGame CreateNewGame()
@@ -32,17 +33,17 @@ namespace EightEpicsConsole
                 case EnumGameLevel.EASY:
                     isHeroRandom = false;
                     numberThreats = 5;
-                    egl = gl;
+                    gameLevel = gl;
                     break;
                 case EnumGameLevel.MEDIUM:
                     isHeroRandom = true;
                     numberThreats = 5;
-                    egl = gl;
+                    gameLevel = gl;
                     break;
                 case EnumGameLevel.HARD:
                     isHeroRandom = true;
                     numberThreats = 8;
-                    egl = gl;
+                    gameLevel = gl;
                     break;
             }
             createHeroList();
@@ -91,34 +92,26 @@ namespace EightEpicsConsole
 
         void createHero()
         {
-            Hero Auriel = new Hero(5, "Auriel", EnumHeroName.AURIEL, 0);
-            Hero Caroosh = new Hero(6, "Caroosh", EnumHeroName.CAROOSH, 1);
-            Hero Gron = new Hero(6, "Gron", EnumHeroName.GRON, 2);
-            Hero Jarroth = new Hero(5, "Jarroth", EnumHeroName.JAROTH, 3);
-            Hero Khantos = new Hero(6, "Khantos", EnumHeroName.KHANTOS, 4);
-            Hero Leafwind = new Hero(6, "Leafwind", EnumHeroName.LEAFWIND, 5);
-            Hero Ophinia = new Hero(4, "Ophinia", EnumHeroName.OPHINIA, 6);
-            Hero Sylliph = new Hero(5, "Sylliph", EnumHeroName.SYLLIPH, 7);
-            heroList.Add(Auriel);
-            heroList.Add(Caroosh);
-            heroList.Add(Gron);
-            heroList.Add(Jarroth);
-            heroList.Add(Khantos);
-            heroList.Add(Leafwind);
-            heroList.Add(Ophinia);
-            heroList.Add(Sylliph);
+            heroList = new List<Hero>{
+                new Hero(5, "Auriel", EnumHeroName.AURIEL, 0),
+                new Hero(6, "Caroosh", EnumHeroName.CAROOSH, 1),
+                new Hero(6, "Gron", EnumHeroName.GRON, 2),
+                new Hero(5, "Jarroth", EnumHeroName.JAROTH, 3),
+                new Hero(6, "Khantos", EnumHeroName.KHANTOS, 4),
+                new Hero(6, "Leafwind", EnumHeroName.LEAFWIND, 5),
+                new Hero(4, "Ophinia", EnumHeroName.OPHINIA, 6),
+                new Hero(5, "Sylliph", EnumHeroName.SYLLIPH, 7)
+            };
         }
 
         void createChallenge()
-        {
-            Challenge less = new Challenge(EnumThreatChallenge.LESS);
-            Challenge more = new Challenge(EnumThreatChallenge.MORE);
-            Challenge sameNumber = new Challenge(EnumThreatChallenge.SAME_NUMBER);
-            Challenge other = new Challenge(EnumThreatChallenge.OTHER);
-            challengeList.Add(less);
-            challengeList.Add(other);
-            challengeList.Add(more);
-            challengeList.Add(sameNumber);
+        { challengeList = new List<Challenge> {
+                new ChallengeLess(),
+                new ChallengeMore(),
+                new ChallengeSameNumber(),
+                new ChallengeOther(),
+            };
+            
         }
 
 

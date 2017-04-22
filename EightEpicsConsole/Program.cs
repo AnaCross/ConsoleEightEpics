@@ -23,7 +23,7 @@ namespace EightEpicsConsole
             ui.hello();
             newGame.setLevel(ui.changeLevel());
             Round round = new Round(newGame.randomThreatList[0], newGame.heroList);
-            ui.startRound(round, newGame.egl);
+            ui.startRound(round, newGame.gameLevel);
             while (isFinish == false)
             {
                 

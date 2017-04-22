@@ -9,11 +9,11 @@ namespace EightEpicsConsole
     class Hero
     {   
         int livePoint;
-        public String name;
-        public String click;
-        public EnumHeroName iD;
+        public String name { get; }
+        public String click { get; }
+        public EnumHeroName iD { get; }
         bool isExhausted;
-        public int ident;
+        public int ident { get; }
 
         public Hero(int lp, String n, EnumHeroName hn, int i)
         {
@@ -29,16 +29,31 @@ namespace EightEpicsConsole
         {
             switch (tn)
             {
-                case "S":
+                case "S": //superpower
+                    decreaseLivePoint();
+                    
                     break;
-                case "R":
+                case "R": //reroll 3 dice
+                    decreaseLivePoint();
+                    //TODO reroll() - max 3 dice
                     break;
-                case "N":
+                case "N": //nothing
+                    //TODO nextHero()
                     break;
                 default:
-                    Console.WriteLine("Podałeś niewłaściwą wartość");
+                    Console.WriteLine("Wrong value");
                     break;
             }
+        }
+
+        void increaseLivePoint()
+        {
+            livePoint++;
+        }
+
+        void decreaseLivePoint()
+        {
+            livePoint--;
         }
     
     }

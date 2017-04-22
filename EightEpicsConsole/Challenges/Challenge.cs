@@ -4,17 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EightEpicsConsole
+namespace EightEpicsConsole.Challenges
 {
-    class Challenge
+    abstract class Challenge
     {
-        public EnumThreatChallenge enumThretChallange;
         int quantityDice;
         int value;
 
-        public Challenge(EnumThreatChallenge etc)
+        public Challenge()
         {
-            enumThretChallange = etc;
             value = 0;
         }
 
@@ -37,6 +35,9 @@ namespace EightEpicsConsole
         {
             value = v;
         }
+
+        public abstract void skillChallenge();
+        public abstract EnumThreatChallenge getChallenge();
 
     }
 }

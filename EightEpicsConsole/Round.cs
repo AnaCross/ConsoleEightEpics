@@ -12,6 +12,7 @@ namespace EightEpicsConsole
         public DicePool dicePool;
         public List<Hero> heroList;
         public int numberChallange;
+        public int countDicePool { get; }
 
         public Round(Threats th, List<Hero> hL)
         {
@@ -20,25 +21,21 @@ namespace EightEpicsConsole
             numberChallange = 0;
             if (threat.iD.Equals(EnumThreatName.SERRIN))
             {
-                foreach (Dice i in dicePool.dicePool)
-                {
-                    i.value = 6;
-                }
+                dicePool.SerrinDicePool();
             }
             else
             {
                 createDicePool();
             }
+            countDicePool = dicePool.Count;
         }
 
         void createDicePool()
         {
-            dicePool = new DicePool(threat.challengeList[numberChallange].getQuantityDice());
-            foreach(Dice i in dicePool.dicePool)
-            {
-                i.roll();
-            }
+            dicePool = new DicePool(threat.getChallenge(numberChallange).getQuantityDice());
         }
+
+         
         
     }
 }
