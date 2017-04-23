@@ -12,7 +12,8 @@ namespace EightEpicsConsole.Heroes
         public String name { get; set; } //aut
         public String click { get; set; } //aut
         public EnumHeroName iD { get; set; } //aut
-        bool isExhausted;
+        public bool isExhausted { get; set; }
+        public String descSkill { get; set; }
         public static int ident = 0;
 
         public Hero()

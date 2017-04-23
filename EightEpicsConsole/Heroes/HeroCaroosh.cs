@@ -14,6 +14,8 @@ namespace EightEpicsConsole.Heroes
             name = "Caroosh";
             click = "[" + name[0] + "]";
             iD = EnumHeroName.CAROOSH;
+            isExhausted = false;
+            descSkill = "Change the result od 1 die to a 1.";
         }
         public override void heroSkill()
         {

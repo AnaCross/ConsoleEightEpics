@@ -14,6 +14,8 @@ namespace EightEpicsConsole.Heroes
             name = "Ophinia";
             click = "[" + name[0] + "]";
             iD = EnumHeroName.OPHINIA;
+            isExhausted = false;
+            descSkill = "Use the power of another avatar (ready or exhausted)";
         }
         public override void heroSkill()
         {

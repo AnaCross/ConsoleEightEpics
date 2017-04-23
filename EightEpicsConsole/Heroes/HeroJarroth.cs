@@ -14,6 +14,8 @@ namespace EightEpicsConsole.Heroes
             name = "Jarroth";
             click = "[" + name[0] + "]";
             iD = EnumHeroName.JAROTH;
+            isExhausted = false;
+            descSkill = "Choose up to 2 dice and flip their currently facedown side faceup";
         }
         public override void heroSkill()
         {

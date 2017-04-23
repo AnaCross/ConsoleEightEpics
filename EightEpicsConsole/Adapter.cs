@@ -99,20 +99,21 @@ namespace EightEpicsConsole
             }
         }
 
-        public void writeHero(EnumGameLevel egl, List<Hero> hL)
+        public void writeHero(EnumGameLevel egl, Round round)
         {
             switch (egl)
             {
                 case EnumGameLevel.EASY:
                     for (int i = 0; i < 8; ++i)
                     {
-                        Console.WriteLine(hL[i].click + hL[i].name);
+                        Console.WriteLine("{0,-3} {1, -18} {2}",round.heroList[i].click, round.heroList[i].name, round.heroList[i].descSkill);
                     }
                     break;
                 default:
                     for (int i = 0; i < 8; ++i)
                     {
-                        Console.WriteLine(hL[i].name);
+                        
+                        Console.WriteLine("{0,-15} {1}", round.heroList[i].name, round.heroList[i].descSkill);
                     }
                     break;
             }

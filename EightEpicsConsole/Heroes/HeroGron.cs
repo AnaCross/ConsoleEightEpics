@@ -14,6 +14,8 @@ namespace EightEpicsConsole.Heroes
             name = "Gron";
             click = "[" + name[0] + "]";
             iD = EnumHeroName.GRON;
+            isExhausted = false;
+            descSkill = "Change the result of 1 die to a 6";
         }
         public override void heroSkill()
         {

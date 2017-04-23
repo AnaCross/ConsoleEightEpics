@@ -14,6 +14,8 @@ namespace EightEpicsConsole.Heroes
             name = "Sylliph";
             click = "[" + name[0] + "]";
             iD = EnumHeroName.SYLLIPH;
+            isExhausted = false;
+            descSkill = "Choose the result of a die. Increase or decrease by 1 all dice showing that result.";
         }
         public override void heroSkill()
         {

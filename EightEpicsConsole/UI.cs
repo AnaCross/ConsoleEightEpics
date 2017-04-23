@@ -77,7 +77,7 @@ namespace EightEpicsConsole
             }
             Console.WriteLine();
             Console.WriteLine("Hero:");
-            adapter.writeHero(gameLevel, round.heroList);
+            adapter.writeHero(gameLevel, round);
             Console.ReadKey();
         }
     }

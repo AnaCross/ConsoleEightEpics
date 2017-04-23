@@ -14,6 +14,8 @@ namespace EightEpicsConsole.Heroes
             name = "Leafwind";
             click = "[" + name[0] + "]";
             iD = EnumHeroName.LEAFWIND;
+            isExhausted = false;
+            descSkill = "Return 1 exhausted avatar to its ready state, then reroll up to 2 dice.";
         }
         public override void heroSkill()
         {

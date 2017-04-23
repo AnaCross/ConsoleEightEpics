@@ -14,6 +14,8 @@ namespace EightEpicsConsole.Heroes
             name = "Auriel";
             click = "[" + name[0] + "]";
             iD = EnumHeroName.AURIEL;
+            isExhausted = false;
+            descSkill = "Restore 1 life point to another avatar, then reroll up to 2 dice.";
         }
         public override void heroSkill()
         {
