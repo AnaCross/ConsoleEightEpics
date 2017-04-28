@@ -17,9 +17,22 @@ namespace EightEpicsConsole.Heroes
             isExhausted = false;
             descSkill = "Use the power of another avatar (ready or exhausted)";
         }
-        public override void heroSkill()
+        public override void heroSkill(Round round)
         {
-            //TODO Hero Ophinia skill
+            EnumHeroName ehn;
+            Console.WriteLine("Change hero to use skill [A/C/G/J/K/L/O/S]:");
+            foreach (Hero h in round.heroList)
+            {
+                Console.WriteLine(h.click + h.name);
+            }
+            ehn = round.ui.adapter.readHero();
+            foreach (Hero h in round.heroList)
+            {
+                if (h.iD == ehn)
+                {
+                    h.heroSkill(round);
+                }
+            }
         }
     }
 }

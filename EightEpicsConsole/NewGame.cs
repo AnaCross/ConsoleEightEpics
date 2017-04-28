@@ -64,9 +64,10 @@ namespace EightEpicsConsole
                 if (randomThreatList.Exists(h => h.ident == hero).Equals(false))
                 {
                     randomThreatList.Add(threatList[hero]);
-                    Console.WriteLine(threatList[hero].name);
+                    //Console.WriteLine(threatList[hero].name);
                 }
             }
+
         }
 
         void createHeroList()
@@ -85,12 +86,20 @@ namespace EightEpicsConsole
                 {
                     randomHero = (EnumGameLevel)values.GetValue(rnd.Next(values.Length));
                     hero = rnd.Next(8);
-                    if (randomHeroList.Exists(h => h.iD.Equals(randomHero)).Equals(false))
+                    if ((randomHeroList.Exists(h => h.iD == heroList[hero].iD)) == false)
                     {
                         randomHeroList.Add(heroList[hero]);
                         //Console.WriteLine(heroList[hero].name);
                     }
                 }
+                //Console.ReadKey();
+                heroList.Clear();
+                for(int i=0; i<8; ++i)
+                {
+                    heroList.Add(randomHeroList[i]);
+                    //Console.WriteLine(heroList[i].name);
+                }
+                //Console.ReadKey();
             }
         }
 

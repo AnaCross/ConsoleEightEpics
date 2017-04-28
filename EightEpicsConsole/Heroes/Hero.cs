@@ -28,23 +28,17 @@ namespace EightEpicsConsole.Heroes
             ident++; 
         }
 
-        public void breakLivePoint(String tn)
+        public void breakLivePoint(String tn, Round round)
         {
             switch (tn)
             {
                 case "S": //superpower
                     decreaseLivePoint();
-                    heroSkill();
+                    heroSkill(round);
                     break;
                 case "R": //reroll 3 dice
                     decreaseLivePoint();
                     //TODO reroll() - max 3 dice
-                    break;
-                case "N": //nothing
-                    //TODO nextHero()
-                    break;
-                default:
-                    Console.WriteLine("Wrong value");
                     break;
             }
         }
@@ -58,7 +52,8 @@ namespace EightEpicsConsole.Heroes
         {
             livePoint--;
         }
-        abstract public void heroSkill();
+
+        abstract public void heroSkill(Round round);
         //TODO All hero skills
     }
 }

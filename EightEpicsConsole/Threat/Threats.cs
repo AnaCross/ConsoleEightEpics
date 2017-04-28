@@ -10,7 +10,6 @@ namespace EightEpicsConsole
     {
         public String name;
         int numberChallange;
-        int iter;
         public int ident;
         public EnumThreatName iD;
         List<Challenge> challengeList;
@@ -21,7 +20,6 @@ namespace EightEpicsConsole
             numberChallange = nc;
             iD = etn;
             challengeList = new List<Challenge>();
-            iter = 0;
             ident = i;
         }
 
@@ -49,7 +47,6 @@ namespace EightEpicsConsole
             {
                 challengeList.Add(challenge);
                 challengeList.Last().setValue(var);
-                //challengeList[i].setValue(var);
                 challengeList.Last().setQuantityDice(quantityDice);
             }
         }

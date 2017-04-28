@@ -22,12 +22,29 @@ namespace EightEpicsConsole
             UI ui = UI.createUI();
             ui.hello();
             newGame.setLevel(ui.changeLevel());
-            Round round = new Round(newGame.randomThreatList[0], newGame.heroList);
-            ui.startRound(round, newGame.gameLevel);
+            Round round = new Round(newGame.randomThreatList[0], newGame.heroList, ui);
+            ui.startRound(round);
+            round.printCurrentHero();
+            round.heroList[0].isExhausted = true;
             while (isFinish == false)
             {
-                
+            
+            //for (int i = 0; i < 10; ++i)
+            //{
+                if (newGame.gameLevel.Equals(EnumGameLevel.EASY))
+                {
+                    round.changeHero(ui.changeHero());
+                }
+                else
+                {
+                    ui.actualHero(round);
+                    round.nextHero();
+                    
+                    //round.printCurrentHero();
+                }
+            //}
             }
+            Console.ReadKey();
         }
     }
 }

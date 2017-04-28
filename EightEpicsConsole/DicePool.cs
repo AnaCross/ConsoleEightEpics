@@ -37,15 +37,17 @@ namespace EightEpicsConsole
             this.Sort();
         }
 
-        public void rerollDicePoll(List<Dice> fewDice)
+        public void rerollDicePool(List<int> fewDice)
         {
-            int iter = 0;
-            foreach(Dice d in this)
+            foreach(int d in fewDice)
             {
-                if(d == fewDice[iter])
+               for(int i=0; i<this.Count; ++i)
                 {
-                    d.reroll();
-                    iter++;
+                    if(d == this[i].value)
+                    {
+                        this[i].reroll();
+                        break;
+                    }
                 }
             }
             this.Sort();

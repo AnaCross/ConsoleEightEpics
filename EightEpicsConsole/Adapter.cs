@@ -10,19 +10,14 @@ namespace EightEpicsConsole
 {
     class Adapter
     {
-        public String readYesNo(String date)
+        public String readYesNo()
         {
             while (true)
             {
-                date = Convert.ToString(Console.ReadLine());
-                switch (date)
+                switch (read().ToLower())
                 {
-                    case "Y":
-                        return "Y";
                     case "y":
                         return "Y";
-                    case "N":
-                        return "N";
                     case "n":
                         return "N";
                     default:
@@ -33,26 +28,48 @@ namespace EightEpicsConsole
             }
         }
 
-        public String readLevel(String date)
+        public String readLevel()
         {
-            date = Convert.ToString(Console.ReadLine());
             while (true) {
-                switch (date)
+                switch (read().ToLower())
                 {
-                    case "E":
-                        return "E";
                     case "e":
                         return "E";
-                    case "M":
-                        return "M";
                     case "m":
                         return "M";
-                    case "H":
-                        return "H";
                     case "h":
                         return "H";
                     default:
                         Console.WriteLine("Breaking date. Write return [E/M/H]:");
+                        break;
+                }
+            }
+        }
+
+        public EnumHeroName readHero()
+        {
+            while (true)
+            {
+                switch (read().ToLower())
+                {
+                    case "a":
+                        return EnumHeroName.AURIEL;
+                    case "c":
+                        return EnumHeroName.CAROOSH;
+                    case "g":
+                        return EnumHeroName.GRON;
+                    case "j":
+                        return EnumHeroName.JAROTH;
+                    case "k":
+                        return EnumHeroName.KHANTOS;
+                    case "l":
+                        return EnumHeroName.LEAFWIND;
+                    case "o":
+                        return EnumHeroName.OPHINIA;
+                    case "s":
+                        return EnumHeroName.SYLLIPH;
+                    default:
+                        Console.WriteLine("Breaking date. Write return [A/C/G/J/K/L/O/S]:");
                         break;
                 }
             }
@@ -106,17 +123,137 @@ namespace EightEpicsConsole
                 case EnumGameLevel.EASY:
                     for (int i = 0; i < 8; ++i)
                     {
-                        Console.WriteLine("{0,-3} {1, -18} {2}",round.heroList[i].click, round.heroList[i].name, round.heroList[i].descSkill);
+                        if (round.heroList[i].iD == round.currentHero.iD)
+                        {
+                            Console.Write("i:" + i + "\n");
+                            Console.WriteLine("-> {0,-6} {1, -18} {2}", round.heroList[i].click, round.heroList[i].name, round.heroList[i].descSkill);
+                        }else
+                        {
+                            if(round.heroList[i].isExhausted == true)
+                            {
+                                Console.WriteLine("EXHAUSTED {0,-3} {1, -18} {2}", round.heroList[i].click, round.heroList[i].name, round.heroList[i].descSkill);
+                            }
+                            else
+                            {
+                                Console.WriteLine("   {0,-6} {1, -18} {2}", round.heroList[i].click, round.heroList[i].name, round.heroList[i].descSkill);
+                            }
+                            
+                        }
                     }
                     break;
                 default:
                     for (int i = 0; i < 8; ++i)
                     {
-                        
-                        Console.WriteLine("{0,-15} {1}", round.heroList[i].name, round.heroList[i].descSkill);
+                        if (round.heroList[i].iD == round.currentHero.iD)
+                        {
+                            Console.WriteLine("-> {0,-15} {1}", round.heroList[i].name, round.heroList[i].descSkill);
+                        }
+                        else
+                        {
+                            if (round.heroList[i].isExhausted == true)
+                            {
+                                Console.WriteLine("EXHAUSTED {0,-24} {1}", round.heroList[i].name, round.heroList[i].descSkill);
+                            }
+                            else
+                            {
+                                Console.WriteLine("{0,-15} {1}", round.heroList[i].name, round.heroList[i].descSkill);
+                            }
+
+                        }
                     }
                     break;
             }
         }
+
+        private String read()
+        {
+            return Console.ReadLine();
+        }
+
+        public String readSR()
+        {
+            while (true)
+            {
+                switch (read().ToLower())
+                {
+                    case "s":
+                        return "S";
+                    case "r":
+                        return "R";
+                    default:
+                        Console.WriteLine("Breaking date. Write return [S/R]:");
+                        break;
+                }
+            }
+        }
+
+        public List<int> readNumber(Round round)
+        {
+            String[] numbers = read().Split(' ');
+            List<int> listNumber = new List<int>();
+            if (isGoodLong(numbers) == true)
+            {
+                foreach (String s in numbers)
+                {
+                    try
+                    {
+                        //Console.WriteLine(s);
+                        listNumber.Add(Convert.ToInt32(s));
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine("Breaking format. Write value 1 to 6: ");
+                        readNumber(round);
+                    }
+                }
+                if(isGoodValue(listNumber) == true)
+                {
+                    return listNumber;
+                }else
+                {
+                    Console.WriteLine("Too big value. Write value 1 to 6: ");
+                    readNumber(round);
+                    return listNumber;
+                }
+                
+            }else
+            {
+                Console.WriteLine("Too mach numbers. Write max 3 value 1 to 6: ");
+                readNumber(round);
+                return listNumber;
+            }
+        }
+
+        private bool isGoodLong(String[] list)
+        {
+            int i = 0;
+            bool b;
+            foreach(String s in list)
+            {
+                i++;
+            }
+            return b = (i > 3) ? false : true;
+        }
+
+        private bool isGoodValue(List<int> list)
+        {
+            int i = 0;
+            bool b;
+            foreach (int s in list)
+            {
+                i = (s < 7 && s > 0) ? ++i : i;
+                //Console.WriteLine("i={0}", i);
+            }
+            return b = (i == list.Count) ? true : false;
+        }
+        /*
+        private bool isOnList(Round round)
+        {
+            foreach ()
+            {
+
+            }
+        }
+        */
     }
 }

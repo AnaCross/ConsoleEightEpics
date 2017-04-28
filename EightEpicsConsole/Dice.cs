@@ -26,5 +26,30 @@ namespace EightEpicsConsole
         {
             this.value = value;
         }
+
+        public void reverseDie(int i)
+        {
+            switch (i)
+            {
+                case 1:
+                    value = 6;
+                    break;
+                case 2:
+                    value = 5;
+                    break;
+                case 3:
+                    value = 4;
+                    break;
+                case 4:
+                    value = 3;
+                    break;
+                case 5:
+                    value = 2;
+                    break;
+                case 6:
+                    value = 1;
+                    break;
+            }
+        }
     }
 }

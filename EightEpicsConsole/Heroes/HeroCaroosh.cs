@@ -17,9 +17,19 @@ namespace EightEpicsConsole.Heroes
             isExhausted = false;
             descSkill = "Change the result od 1 die to a 1.";
         }
-        public override void heroSkill()
+        public override void heroSkill(Round round)
         {
-            //TODO Hero Caroosh skill
+            Console.WriteLine("\nChange 1 die. Write number 1 to 6:");
+            int i = Convert.ToInt32(Console.ReadLine());
+            foreach(Dice d in round.dicePool)
+            {
+                if(d.value == i)
+                {
+                    d.setValue(1);
+                    break;
+                }
+            }
+            round.ui.showDicePool(round);
         }
     }
 }
